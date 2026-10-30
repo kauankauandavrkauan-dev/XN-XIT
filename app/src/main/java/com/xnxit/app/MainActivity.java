@@ -80,9 +80,10 @@ public class MainActivity extends Activity {
                 if (ok) showHome(result.optString("expires_at", ""));
                 else status.setText(result.optString("message", "KEY inválida ou expirada."));
             });
-        } catch (Exception e) {
-            runOnUiThread(() -> status.setText("Não foi possível conectar ao servidor. Verifique a URL HTTPS."));
-        } finally { if (c != null) c.disconnect(); }
+       } catch (Exception e) {
+    String erro = e.getClass().getSimpleName() + ": " + e.getMessage();
+    runOnUiThread(() -> status.setText("ERRO: " + erro));
+} finally { if (c != null) c.disconnect(); }
     }
     private void showHome(String expiry) {
         base();
