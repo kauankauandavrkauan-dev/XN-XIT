@@ -16,7 +16,7 @@ import java.util.concurrent.Executors;
 
 public class MainActivity extends Activity {
     // Troque pela URL HTTPS onde você publicar a pasta backend/.
-    private static final String API = "https://SEU-DOMINIO.com/xnxit/api/validate.php";
+    private static final String API = "https://xnxit.42web.io/backend/api/validate.php";
     private final ExecutorService worker = Executors.newSingleThreadExecutor();
     private LinearLayout root;
     private EditText keyInput;
